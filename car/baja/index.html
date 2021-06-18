@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div id="menu-baja-empleado">
+			<div class="card">
+			  <div class="card-header"><center>Baja de empleado</center></div>
+			  <div class="card-body">
+			    <h5 class="card-title">Inserta el código</h5>
+			     <div class="form-group col-md-6">
+			      <input type="text" class="form-control" id="codigo-baja" placeholder="Código">
+			    </div>
+			    <a id="baja-emp" href="#" class="btn btn-primary">Eliminar</a>
+			  </div>
+			</div>
+		</div>
+		<div id="menu-asignar" style="display: none;">
+	        <center><h4>Transferir prestamos</h4></center>
+	        <div class="form-row">
+	          <div class="form-group col-md">
+	             <br><br>
+	            <label for="codigo-origen">Codigo del empleado origen  </label>
+	            <input type="text" class="form-control" id="codigo-origen" placeholder="Código Origen">
+	            <br><br>
+	            <label for="codigo-destino">Codigo del empleado destino </label>
+	            <input type="text" class="form-control" id="codigo-destino" placeholder="Código Destino">
+	          </div>
+	        </div>
+	        <center>
+	          <br><br>
+	          <button id="boton-asignar" type="submit" class="btn btn-primary">Asignar</button>
+	        </center>     
+	    </div>
+
+	    <div id="menu-baja-empleado-modal">
+		    <div class="modal fade" id="bajaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		      <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		          <div class="modal-header">
+		            <h5 class="modal-title" id="exampleModalLabel">Error</h5>
+		            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		              <span aria-hidden="true">&times;</span>
+		            </button>
+		          </div>
+		          <div class="modal-body">
+		            El empleado que deseas eliminar tiene prestamos pendientes
+		          </div>
+		          <div class="modal-footer">
+		            <button id="btn-asignar-prestamos" type="button" class="btn btn-secondary" data-dismiss="modal">Asignar los prestamos a otro empleado</button>
+		            <button type="button" class="btn btn-primary" data-dismiss="modal" >Salir</button>
+		          </div>
+		        </div>
+		      </div>
+		    </div> 
+	    </div>
+	</div>
+	<script type="module" src="./main.js"></script>
+	<script src="../js/jquery.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
+

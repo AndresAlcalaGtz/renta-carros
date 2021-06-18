@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+	<div id="menu-alta-empleado" class="container">
+		<br><center>Alta de Empleado</center>
+		<div>
+		 <br><br>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="nombre-emp">Nombre</label>
+		      <input type="text" class="form-control" id="nombre-emp" placeholder="Nombre">
+		    </div>
+		    <div class="form-group col-md-6">
+		      <label for="apellido-emp">Apellido</label>
+		      <input type="text" class="form-control" id="apellido-emp" placeholder="Apellido">
+		    </div>
+		  </div>
+		  <div class="form-group">
+		    <label for="codigo-emp">Código</label>
+		    <input type="text" class="form-control" id="codigo-emp" placeholder="Código">
+		  </div>
+		  <div class="form-row">
+		    <div class="form-group col-md-6">
+		      <label for="password-emp">Contraseña</label>
+		      <input  class="form-control" id="password-emp" placeholder="Contraseña" type="password">
+		    </div>
+		    <div class="form-group col-md-4">
+		      <label  for="tipo-emp">Tipo</label>
+		      <select id="tipo-emp" class="form-control">
+		        <option selected>Empleado</option>
+		        <option>Administrador</option>
+		      </select>
+		    </div>
+		  </div>
+		  <button id='alta-emp' type="submit" class="btn btn-primary">Registrar</button>
+		</div>
+	</div>
+	
+	<script type="module" src="./main.js"></script>
+</body>
+</html>

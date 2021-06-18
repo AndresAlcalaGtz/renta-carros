@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Sidebar 09</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+		
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    
+  </head>
+  <body>
+		<div class="wrapper d-flex align-items-stretch">
+			<nav id="sidebar">
+				<div class="custom-menu">
+					<button type="button" id="sidebarCollapse" class="btn btn-primary">
+	        </button>
+        </div>
+	  		<div class="img bg-wrap text-center py-4" style="background-image: url(images/car.png);">
+	  			<div class="user-logo">
+	  				<div class="img" style="background-image: url(images/us.png);"></div>
+	  				<h3>Perfil</h3>
+            <span id="nombre-empleado" class="user-name">Luis Lugo </span>
+            <span id="apellido-empleado" class="user-name">Luis Lugo </span><br>
+            <span id="tipo-empleado" class="user-role">Administrator</span>
+            <span id="codigo-empleado" class="user-role"> 2112334</span><br>
+
+	  			</div>
+	  		</div>
+        <ul class="list-unstyled components mb-5">
+          <li class="active">
+            <a href="/RENTALOSMARQUESITOS/car"><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+          <li>
+            <a id="btn-empleado" href="#"><span class="fa fa-user mr-3"></span> Empleados</a>
+          </li>
+          <li>
+            <a id="btn-renta" href="#"><span class="fa fa-car mr-3"></span> Renta</a> 
+          </li>
+          <li>
+            <a id="btton-devolver" href="#"><span class="fa fa-cog mr-3"></span> Devoluciones</a>
+          </li>
+          <li>
+            <a id="btn-alta-carro" href="alta-car"><span class="fa fa-check-circle mr-3"></span> Alta de carro</a>
+          </li>
+          <li>
+            <a id="btn-carro-registrado" href="#"> <span class="fa fa-list-ul mr-3"></span> Carros registrados </a>
+          </li>
+          <li>
+            <a id="salir" href="#"><span class="fa fa-sign-out mr-3"></span> Salir</a>
+          </li>
+        </ul>
+
+    	</nav>
+
+        <!-- Page Content  -->
+      <div id="content" class="p-4 p-md-5 pt-5">
+          
+        <div id="menu-empleado" style="display: none;">
+          <span>Escoja la opción</span><br><br><br>
+          <a  id="alta-boton" href="alta"  type="button" class="btn btn-outline-primary btn-lg btn-block mr-10">Alta de empleado</a><br><br>  
+          <a id="baja-boton" href="baja"type="button" class="btn btn-outline-danger btn-lg btn-block mr-10">Baja de empleado</a>
+        </div>
+
+        <div id="menu-registrado" style="display: none;">
+          <div>
+            <center>
+              <div class="search">
+                <input id="curp-cliente" type="text" placeholder="CURP" name="search">
+                <button id="buscar-curp" type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </center>
+          </div>
+        </div>
+
+        <div id="menu-alta-cliente-modal">
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Renta de carro "Los Marquesitos"</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  El arrendatario no está registrado
+                </div>
+                <div class="modal-footer">
+                  <button id="btn-alta-cliente" type="button" class="btn btn-secondary" data-dismiss="modal">Dar de alta</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" >Salir</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> 
+
+        <div id="menu-alta-Prestamo-modal">
+          <div class="modal fade" id="prestamoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Renta de carro "Los Marquesitos"</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  El arrendatario ya está registrado 
+                  Continuar con el prestamo
+                </div>
+                <div class="modal-footer">
+                  <button id="btn-prestamo" type="button" class="btn btn-secondary" data-dismiss="modal">continuar</button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" >Salir</button>
+                </div>
+              </div>
+            </div>
+          </div> 
+        </div>    
+
+
+        <div id="menu-alta-prestamo" style="display: none;">
+          <center><h4>Agregar Prestamo</h4></center>
+          <div class="form-row"> 
+              <div class="form-group col-md">
+                <label for="ap-curp">Curp del arrendatario</label>
+                <span id="ap-curp" class="user-role">2112334</span>
+              </div>
+          </div>  
+          <div class="form-row"> 
+            <div class="form-group col-md">
+              <label for="ap-placas">Placas</label>
+              <input type="text" class="form-control" id="ap-placas" placeholder="Placas">
+            </div>
+          </div>   
+            
+          <div class="form-row"> 
+            <div class="form-group col-md">
+              <label for="ap-codigo-pres">Código prestamista</label>
+             <span id="ap-codigo-pres" class="user-role">2112334</span>
+            </div>
+          </div>  
+          <div class="form-row">   
+            <div class="form-group col-md">
+              <label for="ap-fecha-prestamo">Fecha del Prestamo:</label>
+              <p id="ap-fecha-prestamo">
+              <script>  document.write(fecha=new Date().toLocaleDateString()); </script>
+              </p>
+            </div>
+            <div class="form-group col-md">
+              <label for="ap-fecha-devolucion">Fecha de devolucion:</label>
+              <p id="ap-fecha-devolucion">
+                <script> 
+                  var myCurrentDate=new Date();
+                  var myFutureDate=new Date(myCurrentDate);
+                  myFutureDate.setDate(myFutureDate.getDate()+ 7);
+                  document.write(myFutureDate.toLocaleDateString());
+                </script>
+              </p>
+            </div>
+          </div>
+          <div class="form-row"> 
+            <div class="form-group col-md">
+                <center>
+                 <button id="agregar-prestamo" class="btn btn-primary">Agregar</button>
+                </center> 
+            </div>
+          </div>
+  		  </div>
+
+        <div id="menu-alta-cliente" style="display: none;">
+            <center><h4>Agregar Cliente</h4></center>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="nombre-cliente">Nombre</label>
+                <input type="email" class="form-control" id="nombre-cliente" placeholder="Nombre">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="apellido-cliente">Apellido</label>
+                <input type="text" class="form-control" id="apellido-cliente" placeholder="Apellido">
+              </div>
+            </div>  
+            <div class="form-row"> 
+              <div class="form-group col-md">
+                <label for="alta-curp-cliente">Curp</label>
+                <span id="alta-curp-cliente" class="user-role">2112334 </span>
+              </div>
+            </div>   
+            <div class="form-row"> 
+              <div class="form-group col-md">
+                <label for="edad-cliente">Edad</label>
+                <input type="text" class="form-control" id="edad-cliente" placeholder="Edad">
+              </div>
+            </div>  
+              
+            <div class="form-row"> 
+              <div class="form-group col-md">
+                <label for="dire-cliente">Dirección del arrendatario</label>
+                <input type="text" class="form-control" id="dire-cliente" class="user-role">
+              </div>
+            </div> 
+            <center>
+             <button id="boton-agregar-cliente" type="submit" class="btn btn-primary">Agregar</button>
+            </center> 
+       </div>
+       <div id="menu-lista-carro" style="display: none;">  </div>
+
+        <div id="menu-devolver" style="display: none;">
+        <center><h4>Devolver Prestamo</h4></center>
+        <div class="form-row"> 
+          <div class="form-group col-md">
+            <label for="dp-curp">Curp del cliente</label>
+            <input type="text" class="form-control" id="dp-curp" placeholder="Curp">
+          </div>
+        </div>  
+        <div class="form-row"> 
+          <div class="form-group col-md">
+            <label for="dp-placas">Placas</label>
+            <input type="text" class="form-control" id="dp-placas" placeholder="Placas">
+          </div>
+        </div>
+        <center>
+          <br><br>
+          <button id="boton-devolver" type="submit" class="btn btn-primary">Devolver</button>
+        </center>  
+      </div>
+
+
+      
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="module" src="js/agregar.js"></script>
+  </body>
+</html>
